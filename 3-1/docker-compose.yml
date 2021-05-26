@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+
+  web:
+    build: .
+    image: glzjin/buusec_2019_code_review_1
+    container_name: WEB8-Serialize
+    restart: always
+    ports:
+      - "0.0.0.0:52007:80"
+    environment:
+      - FLAG=flag{袁隆平-国士无双}

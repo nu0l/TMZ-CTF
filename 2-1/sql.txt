@@ -1,0 +1,8 @@
+set names utf8;
+create database mydb charset utf8;
+use mydb;
+create table user (username varchar(50),password varchar(50));
+insert into user values ('admin','admin');
+insert into user values ('flag','flag{chun-feng-Sec}');
+
+select * from user where username = '50010' and password= '123456';

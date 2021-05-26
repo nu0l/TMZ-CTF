@@ -1,0 +1,26 @@
+version: "2"
+
+services:
+
+  web:
+    build: ./web
+    image: glzjin/buusec_2019_sql_xss_1
+    restart: always
+    ports:
+      - "0.0.0.0:52005:80"
+    environment:
+      - PASSWORD=123456
+      - FLAG=flag{wan-zi-tong-xue}
+
+  xssbot:
+    build: ./xssbot
+    image: glzjin/buusec_2019_sql_xss_1_xssbot
+    restart: always
+    depends_on:
+      - web
+    environment:
+      - LOGIN_URL=http://web/backend/login.php
+      - PASSWORD=123456
+      - ADMIN_URL=http://web/backend/treehole_list.php
+      - HOST=web
+      - REFERER_URL=http://web/backend/admin.php

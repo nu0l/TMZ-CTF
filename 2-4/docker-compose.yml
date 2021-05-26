@@ -1,0 +1,15 @@
+# BUUSEC 2019 Sql Course 1
+
+version: "2"
+
+services:
+
+  web:
+    build: .
+    image: glzjin/buusec_2019_upload_course_1
+    container_name: WEB7-UP2
+    restart: always
+    ports:
+      - "0.0.0.0:52006:80"
+    environment:
+      - FLAG=flag{吴孟超-救死扶伤}

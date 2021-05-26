@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+
+  web:
+    build: .
+    image: cl4y/sqlitest
+    container_name: WEB2-SQL
+    restart: always
+    ports:
+      - "0.0.0.0:52001:80"

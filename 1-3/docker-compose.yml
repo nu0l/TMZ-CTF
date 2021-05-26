@@ -1,0 +1,12 @@
+version: '2'
+services: 
+  nginx: 
+    image: nimmis/apache-php7
+    container_name: WEB3-UP
+    ports:
+      - "0.0.0.0:52002:80"
+    volumes:
+      - ./www:/var/www/html
+    environment: #设置环境变量
+      - TZ=Asia/Shanghai #设定时区
+    restart: always #容器重启策略：当容器终止退出后，总是重启容器，默认策略。
